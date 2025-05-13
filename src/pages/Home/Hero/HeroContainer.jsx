@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-creative";
-import { EffectCreative } from "swiper";
-// import './Temp.css'
+import { EffectCreative, Autoplay } from "swiper"; // <-- Import Autoplay module
+
 import Hero from './Hero';
 import Hero2 from './Hero2';
-import Hero4 from './Hero4';
 import Hero3 from './Hero3';
-const HeroContainer = () => {
+import Hero4 from './Hero4';
 
+const HeroContainer = () => {
     return (
-        <section className=''>
-            {/* <Hero /> */}
+        <section>
             <Swiper
                 grabCursor={true}
-                effect={"creative"}
+                loop={true}
+               effect="creative"
+                speed={1500} // <-- Smooth transition (1.5 seconds)
+                autoplay={{
+                    delay: 6000, // <-- Longer delay (6 seconds)
+                    disableOnInteraction: false,
+                }}
                 creativeEffect={{
                     prev: {
                         shadow: true,
@@ -26,13 +31,8 @@ const HeroContainer = () => {
                         translate: ["120%", 0, -500],
                     },
                 }}
-                modules={[EffectCreative]}
+                modules={[EffectCreative, Autoplay]} // <-- Register Autoplay here
                 className="mySwiper5"
-                loop={true}
-                autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                }}
             >
                 <SwiperSlide>
                     <Hero />
@@ -47,7 +47,6 @@ const HeroContainer = () => {
                     <Hero4 />
                 </SwiperSlide>
             </Swiper>
-
         </section>
     );
 };
