@@ -18,11 +18,11 @@ const PopularInstructor = () => {
   }, []);
 
   return (
-    <div className="my-28">
+    <div className="">
       <div className="mb-20">
-        <h1 className="text-5xl font-bold text-center text-secondary">
-          Our <span className="text-black dark:text-white">Amazing</span>{" "}
-          Teachers
+        <h1 className="text-4xl italic font-bold text-center text-secondary">
+          Our <span className="text-black dark:text-white">Teachers</span>{" "}
+          
         </h1>
         <div className="w-[40%] text-center mx-auto my-4">
           <p className="text-gray-500">
